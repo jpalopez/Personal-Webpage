@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=PT+Mono&display=swap');
+    
+:root {
+    
+    --color-brand: #f99e1a;
+    --color-brand2: #f99e1a;
+    --color-bg: #43484c;
+    --color-bg2: #405275; 
+    --sidebar-hsl: #405275;
+    --color-body: #F6F1E9;
+    --color-heading: hsl(0, 0%, 100%); 
+    --sidbar-width: 240px; 
+    --font-base: "Bai Jamjuree";
+
+
+}
+
+body {
+    background-color: var(--color-bg2);
+    color: var(--color-body);
+    font-family: var(--font-base), sans-serif; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-weight: 700;
+}
+a{
+    text-decoration: none;
+    color: var(--color-body);
+    transition: all 0.4s ease;
+
+}
+
+a:hover{
+    color: var(--color-brand);
+}
+
+img {
+    width: 100%;
+}
+
+.text-brand {
+    color: var(--color-brand);
+}
+
+.bg-base {
+    background-color: var(--color-bg);
+}
+
+.full-height {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 2px solid hsl(106, 16%, 90%) hsl(106, 16%, 90%);
+}
+.shadow-effect {
+    transition: all 0.5s;
+
+}
+.shadow-effect:hover{
+    box-shadow: -6px 6px 0 0 var(--color-brand);
+}
+
+.iconbox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    background-color: var(--color-brand);
+    color: var(--color-bg);
+}
+/* NAVBAR */
+
+.navbar{
+    background-color: var(--color-bg);
+}
+.navbar .nav-link {
+    font-weight:  700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.navbar .nav-link :hover {
+    color: var(--color-brand);
+}
+
+.navbar .nav-link.active {
+    color: var(--color-brand);
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        min-height: 100vh;
+        width: var(--sidbar-width);
+        background: linear-gradient(rgba(67, 72, 76, 0.8), rgba(67, 72, 76, 0.8)), url(../imagenes/skyline.jpeg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar-brand img {
+        border: 5px solid var(--color-brand);
+    }
+
+    /*content rapper*/
+    #content-wrapper {
+        padding-left: var(--sidbar-width);
+    }
+    
+
+}
+
+/* BUTTON */
+.btn {
+    padding: 12 px 28px;
+    font-weight: 700;
+}
+
+.btn-brand {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-bg);
+}
+.btn-brand:hover, 
+.btn-brand:focus {
+    background-color: var(--color-brand);
+    color: var(--color-bg);
+    border-color: var(--color-brand);
+}
+.link-custom{
+    font-weight: 700;
+    position: relative;
+
+}
+.link-custom::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-brand);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    transition: all 0.4s;
+}
+
+.link-custom:hover::after {
+    width: 100%;
+}
+
+/* CARD */
+.card-custom .card-custom-image {
+    overflow: hidden;
+}
+
+.card-custom .card-custom-image img {
+    transition: all 0.4s ease;
+}
+
+.card-custom:hover .card-custom-image img {
+    transform: scale(1.1);
+}
+
+
+/* SKILLS BARS Y ASÍ*/
+.skill-bars{
+    padding: 25px 30px;
+    width: 600px;
+    background: #43484c;
+    box-shadow: 5px 5px 20px #405275;
+    border-radius: 10px;
+  }
+  .skill-bars .bar{
+    margin: 20px 0;
+  }
+  .skill-bars .bar:first-child{
+    margin-top: 0px;
+  }
+  .skill-bars .bar .info{
+    margin-bottom: 5px;
+  }
+  .skill-bars .bar .info span{
+    font-weight: 500;
+    font-size: 17px;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards;
+  }
+  @keyframes showText {
+    100%{
+      opacity: 1;
+    }
+  }
+  .skill-bars .bar .progress-line{
+    height: 10px;
+    width: 100%;
+    background: #405275;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px #405275,
+                0 1px #405275;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  @keyframes animate {
+    100%{
+      transform: scaleX(1);
+    }
+  }
+  .bar .progress-line span{
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #f99e1a;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+  }
+  .bar .progress-line.html span{
+    width: 100%;
+  }
+  .bar .progress-line.css span{
+    width: 100%;
+  }
+  .bar .progress-line.jquery span{
+    width: 100%;
+  }
+  .bar .progress-line.python span{
+    width: 100%;
+  }
+  .bar .progress-line.mysql span{
+    width: 90%;
+  }
+
+  .bar .progress-line.excel span{
+    width: 88%;
+  }
+
+  .bar .progress-line.office span{
+    width: 95%;
+  }
+
+  .bar .progress-line.R span{
+    width: 50%;
+  }
+
+  .bar .progress-line.pyython span{
+    width: 40%;
+  }
+
+  .bar .progress-line.java span{
+    width: 20%;
+  }
+
+  .bar .progress-line.table span{
+    width: 70%;
+  }
+
+  .bar .progress-line.ccss span{
+    width: 20%;
+  }
+
+
+  .progress-line span::before{
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #405275;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  .progress-line span::after{
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-weight: 500;
+    background: #ffffff;
+    color: #405275;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards;
+  }
+  @keyframes showText2 {
+    100%{
+      opacity: 1;
+    }
+  }
+  .progress-line.html span::after{
+    content: "100%";
+  }
+  .progress-line.css span::after{
+    content: "100%";
+  }
+  .progress-line.jquery span::after{
+    content: "100%";
+  }
+  .progress-line.python span::after{
+    content: "100%";
+  }
+  .progress-line.mysql span::after{
+    content: "90%";
+  }
+
+  .bar .progress-line.excel span::after{
+    content: "88%";
+  }
+
+  .bar .progress-line.office span::after{
+    content: "95%";
+  }
+
+  .bar .progress-line.R span::after{
+    content: "50%";
+  }
+
+  .bar .progress-line.pyython span::after{
+    content: "40%";
+  }
+
+  .bar .progress-line.java span::after{
+    content: "20%";
+  }
+
+  .bar .progress-line.table span::after{
+    content: "70%";
+  }
+  .bar .progress-line.ccss span::after{
+    content: "20%";
+  }
+
+
+  
+
+ 
+
+
+
+
+  /* CONTACT */
+#contact .form-control {
+    background-color: var(--color-base);
+    border-color: var(--color-base);
+    color: var(--color-body);
+}
+
+#contact .form-control:focus {
+    border-color: var(--color-brand);
+    box-shadow: none;
+}
+
+#contact .form-control::placeholder {
+    color: var(--color-body);
+}
+
+#contact input.form-control {
+    height: 44px;
+}
+
